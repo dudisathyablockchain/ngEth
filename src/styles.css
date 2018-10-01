@@ -1,2 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.form-group {
+    color: #ab1f5d;
+    font-weight: bold;
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+}
+
+.std-button {
+    background-color: #ab1f5d;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    margin: 4px 2px;
+    text-decoration: none;
+    border-radius: 12px;
+    width: 100px;
+    display: inline-block;    
+}
+
+.std-button:hover {
+    background-color: #911c51;
+}
+
+.card-title {
+    color: #ab1f5d;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+}
+
+.card-text {
+    color: gray;
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+
+}
+
+.footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+    font-size: 12px;    
+}
+
+
+
+

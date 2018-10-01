@@ -25,6 +25,9 @@ import { IpfsComponent } from './components/ipfs/ipfs.component';
 import { HomeComponent } from './components/home/home.component';
 import { IpfsService } from './services/ipfs.service';
 import { EthService } from './services/eth.service';
+import { MainComponent } from './components/main/main.component';
+import { StudentsService } from './services/students.service';
+import { StudentSearchComponent } from './components/student-search/student-search.component';
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import { EthService } from './services/eth.service';
     NavigationBarComponent,
     FooterComponent,
     IpfsComponent,
-    HomeComponent
+    HomeComponent,
+    MainComponent,
+    StudentSearchComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -52,7 +57,7 @@ import { EthService } from './services/eth.service';
     MetaModule,
     AppRoutingModule
   ],
-  providers: [IpfsService, EthService],
+  providers: [IpfsService, EthService, StudentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,14 @@
+.container {
+    margin-top: 50px;
+
+}
+
+.thead-color {
+    color: #ab1f5d;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #ffdeeb;
+    overflow:auto;
+    
+}
