@@ -37,6 +37,10 @@ export class StudentSearchComponent implements OnInit {
 
   }
 
+  public onSubmit() {
+    
+  }
+
 
 
 }

@@ -84,4 +84,8 @@ export class IpfsComponent implements OnInit {
     
   }
 
+  public onSubmit() {
+    
+  }
+
 }
