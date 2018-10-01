@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { IpfsService } from '../../services/ipfs.service';
 import { EthService } from '../../services/eth.service';
 
-import { NgProgress } from 'ngx-progressbar';
+
+import { Observable } from 'rxjs/Observable';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -18,14 +21,40 @@ export class IpfsComponent implements OnInit {
   _txnCode: any;
   _imgSrc: string;
   _txnInputData: any; 
+ 
+
+  studentForm = new FormGroup(
+		{
+			firstName: new FormControl('', [ Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+      middleName: new FormControl('', Validators.required),
+      branch: new FormControl('', [ Validators.required]),
+      college: new FormControl('', [Validators.required]),
+      address: new FormControl('', Validators.required),
+      university: new FormControl('', [Validators.required]),
+      city: new FormControl('', Validators.required)
+		},
+		{ updateOn: 'submit' }
+	);
 
   constructor(
     private _ipfsService: IpfsService,
-    public ngProgress: NgProgress,
-    private _ethContractService: EthService
-  ) { }
+    private _ethContractService: EthService,
+    private route: ActivatedRoute
+    
+  ) { 
+    
+  }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.studentForm.controls['firstName'].setValue(params._firstName);
+      this.studentForm.controls['lastName'].setValue(params._lastName);
+      this.studentForm.controls['branch'].setValue(params._branch);
+      this.studentForm.controls['college'].setValue(params._college);
+      this.studentForm.controls['university'].setValue(params._university);
+      
+    });
   }
 
   public onFileSelected(event) {    
@@ -34,10 +63,8 @@ export class IpfsComponent implements OnInit {
   }
 
   public upload() {
-    this.ngProgress.start();
      this._ipfsService.uploadFileToIPFS(this._fileToUpload)
      .then(result => this._fileHashCode = result); 
-     this.ngProgress.done(); 
   }
 
   public storeIpfsCode(ipfsHashCode: string){

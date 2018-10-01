@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   protected doSubmit() {
 		const { email, password, rememberMe } = this.form.value;
-		this.router.navigateByUrl('/ipfs');
+		this.router.navigateByUrl('/studentSearch');
 	}
 
 }

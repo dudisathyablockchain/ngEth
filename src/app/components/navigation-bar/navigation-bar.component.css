@@ -1,1 +1,22 @@
+.navbar {
+    background-color: white;
+}
+.nav-link{
+    color: #ab1f5d;
+    font-weight: bold;
+    font-family: "Raleway", sans-serif;
+    font-size: 17px;
+}
 
+.dropdown-item{
+    color:white;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    background-color: #ab1f5d;
+    
+
+}
+.dropdown-menu {
+    background-color: #ab1f5d;
+
+}
